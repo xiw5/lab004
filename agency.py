@@ -15,7 +15,7 @@ def send_all(sock,data):
     send_bytes = 0
     while True:
         n = sock.send(data[send_bytes:])
-        if n <= 0:
+        if n < 0:
             return n
         send_bytes += n
         if send_bytes == len(data):
